@@ -10,8 +10,8 @@ const PLAN1_BOUNDS = [[46.9390, 5.8710],[46.9465, 5.8845]];
 const PLAN2_BOUNDS = [[46.9385, 5.8705],[46.9470, 5.8850]];
 
 // Fichiers images (renommez si besoin)
-const PLAN1_URL = "assets/img/plan1.jpg";
-const PLAN2_URL = "assets/img/plan2.jpg";
+const PLAN1_URL = "assets/img/plan1.jpeg";
+const PLAN2_URL = "assets/img/plan2.JPEG";
 
 // ----------------------------
 // Carte Leaflet
