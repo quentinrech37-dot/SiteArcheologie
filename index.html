@@ -29,16 +29,22 @@
 
 <body>
   <header class="topbar">
-    <div class="brand">
+    <div class="topbar__left">
+      <div class="sitebadge">Cartographie</div>
+    </div>
+
+    <div class="brand brand--center">
       <div class="brand__title">Salins-les-Bains</div>
-      <div class="brand__subtitle">Plans & cartographie (mémoire M2)</div>
+      <div class="brand__subtitle">Plans & cartographie — Mémoire de Master 2</div>
     </div>
 
     <div class="topbar__actions">
-      <button id="btnLocate" class="btn" title="Me localiser (si autorisé)">📍 Localisation</button>
-      <button id="btnReset" class="btn" title="Recentrer sur Salins">⟳ Recentrer</button>
+      <button id="btnLocate" class="btn btn--primary" title="Me localiser">Localisation</button>
+      <button id="btnReset" class="btn" title="Recentrer sur Salins">Recentrer</button>
     </div>
   </header>
+
+
 
   <main class="layout">
     <aside class="sidebar">
@@ -59,30 +65,55 @@
       <div class="panel">
         <div class="panel__title">Plans historiques (surcouches)</div>
 
-        <label class="check">
-          <input type="checkbox" id="togglePlan1" />
-          <span>Plan 1 (scan)</span>
-        </label>
+        <!-- Plan 1 -->
+        <div class="layeritem">
+          <label class="layeritem__main">
+            <input type="checkbox" id="togglePlan1" />
+            <img class="layeritem__thumb" src="assets/img/plan1_thumb.jpg" alt="Vignette plan 1">
+            <span class="layeritem__text">
+              <span class="layeritem__name">Plan 1</span>
+              <span class="layeritem__meta">XVIIIe siècle — plan rectifié</span>
+            </span>
+          </label>
+
+          <div class="layeritem__actions">
+            <button class="btn btn--ghost" type="button" data-info="plan1">Infos</button>
+          </div>
+        </div>
 
         <div class="opacity">
-          <label for="opacityPlan1">Opacité plan 1</label>
+          <label for="opacityPlan1">Opacité</label>
           <input type="range" id="opacityPlan1" min="0" max="1" step="0.05" value="0.75" />
         </div>
 
-        <label class="check">
-          <input type="checkbox" id="togglePlan2" />
-          <span>Plan 2 (scan)</span>
-        </label>
+        <hr class="divider" />
+
+        <!-- Plan 2 -->
+        <div class="layeritem">
+          <label class="layeritem__main">
+            <input type="checkbox" id="togglePlan2" />
+            <img class="layeritem__thumb" src="assets/img/plan2_thumb.jpg" alt="Vignette plan 2">
+            <span class="layeritem__text">
+              <span class="layeritem__name">Plan 2</span>
+              <span class="layeritem__meta">1820–1866 — Carte de l’état-major (ex.)</span>
+            </span>
+          </label>
+
+          <div class="layeritem__actions">
+            <button class="btn btn--ghost" type="button" data-info="plan2">Infos</button>
+          </div>
+        </div>
 
         <div class="opacity">
-          <label for="opacityPlan2">Opacité plan 2</label>
+          <label for="opacityPlan2">Opacité</label>
           <input type="range" id="opacityPlan2" min="0" max="1" step="0.05" value="0.75" />
         </div>
 
         <p class="hint">
-          ⚠️ Pour que les scans se superposent correctement, il faut renseigner leurs coordonnées (voir la partie QGIS).
+          Astuce : activez un plan, puis ajustez l’opacité pour comparer avec le fond.
         </p>
       </div>
+
 
       <div class="panel">
         <div class="panel__title">Aide</div>
@@ -99,5 +130,19 @@
   </main>
 
   <noscript>Ce site a besoin de JavaScript pour afficher la carte.</noscript>
+  <div class="modal" id="infoModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close="1"></div>
+    <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal__header">
+        <div>
+          <div class="modal__kicker">Plan</div>
+          <div class="modal__title" id="modalTitle">Informations</div>
+        </div>
+        <button class="btn btn--ghost" type="button" data-close="1">Fermer</button>
+      </div>
+      <div class="modal__body" id="modalBody"></div>
+    </div>
+  </div>
+
 </body>
 </html>

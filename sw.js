@@ -1,4 +1,4 @@
-const CACHE_NAME = "salins-cartes-v2";
+const CACHE_NAME = "salins-cartes-v5";
 
 const CORE_ASSETS = [
   "./",
@@ -7,8 +7,8 @@ const CORE_ASSETS = [
   "./app.js",
   "./manifest.webmanifest",
   "./offline.html",
-  "./assets/img/plan1.jpg",
-  "./assets/img/plan2.jpg",
+  "./assets/img/plan1_thumb.jpg",
+  "./assets/img/plan2_thumb.jpg",
   "./assets/icons/icon-192.png",
   "./assets/icons/icon-512.png"
 ];
