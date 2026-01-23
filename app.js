@@ -118,6 +118,24 @@ function initUI(){
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeInfo();
   });
+  // Mobile: ouvrir/fermer le panneau "Cartes"
+  const btnSidebar = document.getElementById("btnSidebar");
+  const sidebar = document.getElementById("sidebar");
+
+  if (btnSidebar && sidebar) {
+    btnSidebar.addEventListener("click", () => {
+      sidebar.classList.toggle("sidebar--open");
+    });
+
+    // Fermer le panneau quand on clique sur la carte (mobile uniquement)
+    const mapEl = document.getElementById("map");
+    if (mapEl) {
+      mapEl.addEventListener("click", () => {
+        sidebar.classList.remove("sidebar--open");
+      });
+    }
+  }
+
 
 }
 

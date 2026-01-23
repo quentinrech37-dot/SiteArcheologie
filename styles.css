@@ -260,15 +260,78 @@ input[type="range"]{ width:100%; }
   font-size:.92rem;
 }
 
-/* Responsive */
+/* Mobile-first improvements */
+.btn--mobile{
+  display:none;
+}
+
+/* Mobile layout: carte plein écran + panneau repliable */
 @media (max-width: 900px){
-  .layout{ grid-template-columns: 1fr; grid-template-rows: 320px 1fr; }
-  .sidebar{ border-right:none; border-bottom:1px solid var(--border); }
+
+  /* Topbar compacte */
   .topbar{
     grid-template-columns: 1fr;
-    height:auto;
-    padding:12px 16px;
+    gap:10px;
+    padding:10px 12px;
   }
-  .topbar__actions{ justify-content:flex-start; }
-  .brand--center{ text-align:left; }
+  .brand__title{ font-size:1.1rem; }
+  .brand__subtitle{ font-size:.9rem; }
+
+  .topbar__left{ display:none; } /* cache "Cartographie" (badge) sur mobile */
+
+  .topbar__actions{
+    justify-content:flex-start;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  .btn{
+    padding:8px 10px;
+    border-radius:12px;
+  }
+
+  .btn--mobile{
+    display:inline-flex; /* montre "Cartes" */
+  }
+
+  /* Layout: carte plein écran */
+  .layout{
+    height: calc(100% - 110px); /* topbar plus haute sur mobile */
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr; /* seulement la carte */
+  }
+
+  .mapwrap{
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+  }
+
+  /* Sidebar devient un drawer */
+  .sidebar{
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    top: 92px;                 /* juste sous la topbar */
+    max-height: calc(100vh - 110px);
+    width: auto;
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+
+    transform: translateY(-130%);
+    transition: transform .2s ease;
+    z-index: 5000;
+
+    overflow:auto;
+  }
+
+  .sidebar.sidebar--open{
+    transform: translateY(0);
+  }
+
+  /* Pour que la carte reste bien visible */
+  #map{
+    height: 100%;
+  }
 }
