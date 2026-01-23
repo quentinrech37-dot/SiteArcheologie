@@ -72,8 +72,6 @@ function initMap(){
 
   overlays = { plan1, plan2 };
 
-  // Un petit repère utile (optionnel)
-  L.circleMarker(SALINS_CENTER, { radius: 5 }).addTo(map).bindPopup("Centre (approx.) de Salins-les-Bains");
 }
 
 function initUI(){
@@ -106,6 +104,21 @@ function initUI(){
 
   // Crédit dynamique (vous pouvez personnaliser)
   setCredit("Activez un plan à gauche pour comparer.");
+  // Boutons "Infos" des plans
+  document.querySelectorAll('[data-info]').forEach(btn => {
+    btn.addEventListener('click', () => openInfo(btn.dataset.info));
+  });
+
+  // Fermeture modal
+  document.querySelectorAll('[data-close]').forEach(el => {
+    el.addEventListener('click', closeInfo);
+  });
+
+  // Échap pour fermer
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeInfo();
+  });
+
 }
 
 function setBasemap(which){
@@ -170,3 +183,43 @@ function registerSW(){
     // silencieux
   });
 }
+
+function openInfo(which){
+  const modal = document.getElementById("infoModal");
+  const title = document.getElementById("modalTitle");
+  const body = document.getElementById("modalBody");
+
+  const data = {
+    plan1: {
+      title: "Plan 1 — Plan de Salins (XVIIIe siècle)",
+      html: `
+        <p class="meta"><strong>Source :</strong> scan d’archives — géoréférencement via Map Warper.</p>
+        <p><strong>Contenu :</strong> représentation planimétrique de Salins et des alentours, avec éléments fortifiés, trame viaire et occupation des sols.</p>
+        <p><strong>Remarque :</strong> la déformation visible résulte de la rectification (ajustement sur points d’appui) afin d’aligner le plan avec la cartographie actuelle.</p>
+      `
+    },
+    plan2: {
+      title: "Plan 2 — Carte (XIXe siècle)",
+      html: `
+        <p class="meta"><strong>Source :</strong> scan d’archives — géoréférencement via Map Warper.</p>
+        <p><strong>Contenu :</strong> plan/carte de référence plus tardif(e), utile pour comparer l’évolution des structures urbaines, des axes et des aménagements.</p>
+        <p><strong>À compléter :</strong> date exacte, auteur, cote, contexte de production (selon votre mémoire).</p>
+      `
+    }
+  };
+
+  const d = data[which];
+  if(!d) return;
+
+  title.textContent = d.title;
+  body.innerHTML = d.html;
+
+  modal.setAttribute("aria-hidden", "false");
+}
+
+function closeInfo(){
+  const modal = document.getElementById("infoModal");
+  if(!modal) return;
+  modal.setAttribute("aria-hidden", "true");
+}
+
