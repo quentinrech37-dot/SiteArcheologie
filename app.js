@@ -6,13 +6,11 @@ const SALINS_ZOOM = 15;
 
 // IMPORTANT : À remplacer avec des bornes exactes (voir section QGIS).
 // Format Leaflet : [[latSud, lonOuest],[latNord, lonEst]]
-//const PLAN1_BOUNDS = [[46.9390, 5.8710],[46.9465, 5.8845]];
 const PLAN1_TILES_URL = "https://mapwarper.net/maps/tile/101545/{z}/{x}/{y}.png";
-const PLAN2_BOUNDS = [[46.9385, 5.8705],[46.9470, 5.8850]];
+const PLAN2_TILES_URL = "https://mapwarper.net/maps/tile/101560/{z}/{x}/{y}.png";
+
 
 // Fichiers images (renommez si besoin)
-//const PLAN1_URL = "assets/img/plan1.jpeg";
-const PLAN2_URL = "assets/img/plan2.JPEG";
 
 // ----------------------------
 // Carte Leaflet
@@ -64,7 +62,13 @@ function initMap(){
     attribution: "Plan 1 (Map Warper)"
   });
 
-  const plan2 = L.imageOverlay(PLAN2_URL, PLAN2_BOUNDS, { opacity: 0.75, interactive: false });
+  const plan2 = L.tileLayer(PLAN2_TILES_URL, {
+    opacity: 0.75,
+    maxZoom: 22,
+    maxNativeZoom: 19,
+    attribution: "Plan 2 (Map Warper)"
+  });
+
 
   overlays = { plan1, plan2 };
 
