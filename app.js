@@ -8,6 +8,7 @@ const SALINS_ZOOM = 15;
 // Format Leaflet : [[latSud, lonOuest],[latNord, lonEst]]
 const PLAN1_TILES_URL = "https://mapwarper.net/maps/tile/101545/{z}/{x}/{y}.png";
 const PLAN2_TILES_URL = "https://mapwarper.net/maps/tile/101560/{z}/{x}/{y}.png";
+const PLAN3_TILES_URL = "https://mapwarper.net/maps/tile/101569/{z}/{x}/{y}.png";
 
 
 // Fichiers images (renommez si besoin)
@@ -69,8 +70,15 @@ function initMap(){
     attribution: "Plan 2 (Map Warper)"
   });
 
+  const plan3 = L.tileLayer(PLAN3_TILES_URL, {
+    opacity: 0.75,
+    maxZoom: 22,
+    maxNativeZoom: 19,
+    attribution: "Plan 3 (Map Warper)"
+  });
 
-  overlays = { plan1, plan2 };
+
+  overlays = { plan1, plan2, plan3 };
 
 }
 
@@ -231,7 +239,16 @@ function openInfo(which){
         <p><strong>Contenu :</strong> extrait du Recueil des plans des places du Royaume divisées en provinces, dressé en 1693. Carte manuscrite aquarellée représentant la ville de Salins ; indications topographiques et définitions des ouvrages urbains à diverses échelles. Formats des cartes contenus dans le volume : 36 × 50 cm (double page) et 36 × 24 cm (page simple).</p>
         <p><strong>Remarque :</strong> la déformation visible résulte de la rectification (ajustement sur points d’appui) afin d’aligner le plan avec la cartographie actuelle.</p>
       `
+    },
+    plan3: {
+      title: "Plan 3 — Carte interprétative",
+      html: `
+        <p class="meta"><strong>Source :</strong> travail de recherche (QGIS), géoréférencé via Map Warper.</p>
+        <p><strong>Contenu :</strong> tracé interprétatif des fortifications, avec distinction entre parties attestées et présumées, et phases de construction.</p>
+        <p><strong>Remarque :</strong> cette carte ne représente pas un état cartographique historique mais une synthèse archéologique.</p>
+      `
     }
+
   };
 
   const d = data[which];
