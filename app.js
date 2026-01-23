@@ -96,11 +96,19 @@ function initUI(){
   o2.addEventListener("input", () => setOverlayOpacity("plan2", parseFloat(o2.value)));
 
   // Boutons topbar
-  document.getElementById("btnReset").addEventListener("click", () => {
-    map.setView(SALINS_CENTER, SALINS_ZOOM);
-  });
+  const btnReset = document.getElementById("btnReset");
+  if (btnReset) {
+    btnReset.addEventListener("click", () => {
+      map.setView(SALINS_CENTER, SALINS_ZOOM);
+    });
+  }
 
-  document.getElementById("btnLocate").addEventListener("click", locateUser);
+  // Bouton "Localisation" optionnel (si vous le remettez un jour)
+  const btnLocate = document.getElementById("btnLocate");
+  if (btnLocate) {
+    btnLocate.addEventListener("click", locateUser);
+  }
+
 
   // Crédit dynamique (vous pouvez personnaliser)
   setCredit("Activez un plan à gauche pour comparer.");

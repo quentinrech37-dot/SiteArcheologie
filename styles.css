@@ -270,10 +270,12 @@ input[type="range"]{ width:100%; }
 
   /* Topbar compacte */
   .topbar{
-    grid-template-columns: 1fr;
-    gap:10px;
-    padding:10px 12px;
+    height: auto;          /* IMPORTANT : annule le 74px desktop */
+    position: sticky;      /* reste en haut quand on scroll */
+    top: 0;
+    z-index: 6000;         /* au-dessus de Leaflet */
   }
+
   .brand__title{ font-size:1.1rem; }
   .brand__subtitle{ font-size:.9rem; }
 
