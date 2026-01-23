@@ -225,7 +225,7 @@ function openInfo(which){
       `
     },
     plan2: {
-      title: "Plan 2 — Carte (XIXe siècle)",
+      title: "Plan 2 - Plan de Salins - Extrait du Recueil des plans des places du Royaume divisées en provinces (1693)",
       html: `
         <p class="meta"><strong>Source :</strong> scan d’archives - Bibliothèque nationale de France, département Cartes et plans, Recueil des plans des places du Royaume divisées en provinces (1693), cote GE DD-4585, Gallica, FRBNF41414522. - géoréférencement via Map Warper.</p>
         <p><strong>Contenu :</strong> extrait du Recueil des plans des places du Royaume divisées en provinces, dressé en 1693. Carte manuscrite aquarellée représentant la ville de Salins ; indications topographiques et définitions des ouvrages urbains à diverses échelles. Formats des cartes contenus dans le volume : 36 × 50 cm (double page) et 36 × 24 cm (page simple).</p>
