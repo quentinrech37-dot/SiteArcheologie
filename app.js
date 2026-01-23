@@ -94,14 +94,20 @@ function initUI(){
   // Toggles plans
   const t1 = document.getElementById("togglePlan1");
   const t2 = document.getElementById("togglePlan2");
+  const t3 = document.getElementById("togglePlan3");
+
   const o1 = document.getElementById("opacityPlan1");
   const o2 = document.getElementById("opacityPlan2");
+  const o3 = document.getElementById("opacityPlan3");
 
-  t1.addEventListener("change", () => toggleOverlay("plan1", t1.checked));
-  t2.addEventListener("change", () => toggleOverlay("plan2", t2.checked));
+  if (t1) t1.addEventListener("change", () => toggleOverlay("plan1", t1.checked));
+  if (t2) t2.addEventListener("change", () => toggleOverlay("plan2", t2.checked));
+  if (t3) t3.addEventListener("change", () => toggleOverlay("plan3", t3.checked));
 
-  o1.addEventListener("input", () => setOverlayOpacity("plan1", parseFloat(o1.value)));
-  o2.addEventListener("input", () => setOverlayOpacity("plan2", parseFloat(o2.value)));
+  if (o1) o1.addEventListener("input", () => setOverlayOpacity("plan1", parseFloat(o1.value)));
+  if (o2) o2.addEventListener("input", () => setOverlayOpacity("plan2", parseFloat(o2.value)));
+  if (o3) o3.addEventListener("input", () => setOverlayOpacity("plan3", parseFloat(o3.value)));
+
 
   // Boutons topbar
   const btnReset = document.getElementById("btnReset");
