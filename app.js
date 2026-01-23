@@ -247,11 +247,10 @@ function openInfo(which){
       `
     },
     plan3: {
-      title: "Plan 3 — Carte interprétative",
+      title: "Plan 3 - Tracé interprétatif de l’enceinte fortifiée de Salins-les-Bains : vestiges conservés et tracés restitués",
       html: `
-        <p class="meta"><strong>Source :</strong> travail de recherche (QGIS), géoréférencé via Map Warper.</p>
-        <p><strong>Contenu :</strong> tracé interprétatif des fortifications, avec distinction entre parties attestées et présumées, et phases de construction.</p>
-        <p><strong>Remarque :</strong> cette carte ne représente pas un état cartographique historique mais une synthèse archéologique.</p>
+        <p class="meta"><strong>Source :</strong>BD parcellaire - IGN, Plans anciens (Archives départementales du Jura, BNF, Musée de la Grande Saline, Bibliothèque Municipale de Salins, Archives militaires de Vincennes) - géoréférencé via Map Warper.</p>
+        <p><strong>Contenu :</strong> Carte interprétative du tracé des fortifications de Salins-les-Bains. Les segments en bleu correspondent aux vestiges encore conservés en élévation, tandis que les autres tracés indiquent des restitutions ou hypothèses fondées sur les sources historiques, la topographie et les données archéologiques.</p>
       `
     }
 
