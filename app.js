@@ -217,19 +217,19 @@ function openInfo(which){
 
   const data = {
     plan1: {
-      title: "Plan 1 — Plan de Salins (XVIIIe siècle)",
+      title: "Plan 1 — Plan de Salins et de ses fortifications (XVIIIe siècle)",
       html: `
-        <p class="meta"><strong>Source :</strong> scan d’archives — géoréférencement via Map Warper.</p>
-        <p><strong>Contenu :</strong> représentation planimétrique de Salins et des alentours, avec éléments fortifiés, trame viaire et occupation des sols.</p>
+        <p class="meta"><strong>Source :</strong> scan d’archives - Archives Départementales du Jura, 5E 641 Plan 9 - géoréférencement via Map Warper.</p>
+        <p><strong>Contenu :</strong> Plan de masse de la ville de Salins et de ses fortifications, avec légende détaillant les tours, portes et principaux bâtiments des forts Saint-André, Belin et Bracon. Aquarelle, plan légendé à l’échelle de deux pouces pour 100 toises, fin du XVIIIᵉ siècle.</p>
         <p><strong>Remarque :</strong> la déformation visible résulte de la rectification (ajustement sur points d’appui) afin d’aligner le plan avec la cartographie actuelle.</p>
       `
     },
     plan2: {
       title: "Plan 2 — Carte (XIXe siècle)",
       html: `
-        <p class="meta"><strong>Source :</strong> scan d’archives — géoréférencement via Map Warper.</p>
-        <p><strong>Contenu :</strong> plan/carte de référence plus tardif(e), utile pour comparer l’évolution des structures urbaines, des axes et des aménagements.</p>
-        <p><strong>À compléter :</strong> date exacte, auteur, cote, contexte de production (selon votre mémoire).</p>
+        <p class="meta"><strong>Source :</strong> scan d’archives - Bibliothèque nationale de France, département Cartes et plans, Recueil des plans des places du Royaume divisées en provinces (1693), cote GE DD-4585, Gallica, FRBNF41414522. - géoréférencement via Map Warper.</p>
+        <p><strong>Contenu :</strong> extrait du Recueil des plans des places du Royaume divisées en provinces, dressé en 1693. Carte manuscrite aquarellée représentant la ville de Salins ; indications topographiques et définitions des ouvrages urbains à diverses échelles. Formats des cartes contenus dans le volume : 36 × 50 cm (double page) et 36 × 24 cm (page simple).</p>
+        <p><strong>Remarque :</strong> la déformation visible résulte de la rectification (ajustement sur points d’appui) afin d’aligner le plan avec la cartographie actuelle.</p>
       `
     }
   };
