@@ -200,23 +200,32 @@ input[type="range"]{ width:100%; }
 }
 
 /* Modal infos */
-.modal{ position:fixed; inset:0; display:none; }
+.modal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 99999; /* au-dessus de Leaflet */
+}
+
 .modal[aria-hidden="false"]{ display:block; }
 
 .modal__backdrop{
-  position:absolute; inset:0;
+  position: absolute;
+  inset: 0;
   background: rgba(2,6,23,.42);
+  z-index: 0;
 }
 
 .modal__card{
-  position:relative;
+  position: relative;
+  z-index: 1;
   width: min(720px, calc(100vw - 28px));
   margin: 70px auto 0;
   background: var(--card);
-  border:1px solid var(--border);
+  border: 1px solid var(--border);
   border-radius: 18px;
   box-shadow: 0 20px 60px rgba(2,6,23,.20);
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .modal__header{
