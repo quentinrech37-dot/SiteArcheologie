@@ -88,7 +88,7 @@ html,body{ height:100%; margin:0; font-family: ui-serif, Georgia, "Times New Rom
 
 /* Layout */
 .layout{
-  height: calc(100% - 74px);
+  height: calc(100% - 86px);
   display:grid;
   grid-template-columns: 360px 1fr;
 }
