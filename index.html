@@ -7,7 +7,9 @@
   <title>Salins-les-Bains - Cartes</title>
 
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="icon" href="assets/icons/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="32x35" href="assets/img/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/img/icon-192.png" />
+
 
   <!-- Leaflet -->
   <link
@@ -35,9 +37,22 @@
       <div class="brand__subtitle">Plans & cartographie</div>
     </div>
 
-    <div class="topbar__actions">
-      <button id="btnSidebar" class="btn btn--primary btn--mobile" type="button" title="Ouvrir les cartes">Cartes</button>
-      <button id="btnReset" class="btn" title="Recentrer sur Salins">Recentrer</button>
+    <div class="topbar">
+      <div class="topbar__left"></div>
+
+      <div class="topbar__center">
+        <div class="brand brand--center">
+          <img class="brand__logo" src="assets/img/icon-192.png" alt="Blason de Salins-les-Bains" />
+          <div class="brand__text">
+            <div class="brand__title">Salins-les-Bains</div>
+            <div class="brand__subtitle">Plans & cartographie</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="topbar__right">
+        <button id="btnRecenter" class="btn btn--ghost">Recentrer</button>
+      </div>
     </div>
   </header>
 
