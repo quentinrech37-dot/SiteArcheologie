@@ -1,4 +1,4 @@
-const CACHE_NAME = "salins-cartes-v17";
+const CACHE_NAME = "salins-cartes-v18";
 const CORE_ASSETS = [
   "./",
   "./index.html",
@@ -13,6 +13,11 @@ const CORE_ASSETS = [
   "./assets/img/plan4_thumb.jpg",
   "./assets/img/plan5_thumb.jpg",
   "./assets/img/plan6_thumb.jpg",
+  "./assets/files/plan1.jpeg",
+  "./assets/files/plan2.JPEG",
+  "./assets/files/Plan4_1738_1.jpg",
+  "./assets/files/Plan5_1759_1.jpg",
+  "./assets/files/Plan6_1788_1.jpg",
   "./assets/img/icon-192.png",
   "./assets/img/icon-512.png"
 ];

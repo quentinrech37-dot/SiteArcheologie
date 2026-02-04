@@ -103,10 +103,30 @@ function openInfoFromPlan(planId) {
   if (!st) return;
 
   title.textContent = st.data?.info?.title || st.data?.name || "Informations";
-  body.innerHTML = st.data?.info?.html || "<p>Aucune information disponible.</p>";
 
+  let html = st.data?.info?.html || "<p>Aucune information disponible.</p>";
+
+  // ---- AJOUT : lien vers le document original ----
+  if (st.data?.fichier) {
+    html += `
+      <hr class="divider" />
+      <p>
+        <a
+          href="${st.data.fichier}"
+          class="btn btn--primary"
+          target="_blank"
+          download
+        >
+          Télécharger le scan d'archive (document original)
+        </a>
+      </p>
+    `;
+  }
+
+  body.innerHTML = html;
   modal.setAttribute("aria-hidden", "false");
 }
+
 
 // -------------------- CHARGEMENT JSON --------------------
 async function loadPlansFromJson() {

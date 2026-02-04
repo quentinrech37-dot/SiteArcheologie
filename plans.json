@@ -6,6 +6,7 @@
       "meta": "Fortifications de Salins - Plan de masse de la ville et des forts Saint-André, Belin et Bracon (fin XVIIIe siècle)",
       "thumb": "assets/img/plan1_thumb.jpg",
       "tileUrl": "https://mapwarper.net/maps/tile/101545/{z}/{x}/{y}.png",
+      "fichier": "assets/files/plan1.jpeg",
       "defaultVisible": false,
       "defaultOpacity": 0.75,
       "info": {
@@ -19,6 +20,7 @@
       "meta": "Extrait du Recueil des plans des places du Royaume divisées en provinces (1693)",
       "thumb": "assets/img/plan2_thumb.jpg",
       "tileUrl": "https://mapwarper.net/maps/tile/101560/{z}/{x}/{y}.png",
+      "fichier": "assets/files/plan2.JPEG",
       "defaultVisible": false,
       "defaultOpacity": 0.75,
       "info": {
@@ -45,6 +47,7 @@
       "meta": "Projet de 1738 (Aumale)",
       "thumb": "assets/img/plan4_thumb.jpg",
       "tileUrl": "https://mapwarper.net/maps/tile/102017/{z}/{x}/{y}.png",
+      "fichier": "assets/files/Plan4_1738_1.jpg",
       "defaultVisible": false,
       "defaultOpacity": 0.75,
       "info": {
@@ -58,6 +61,7 @@
       "meta": "Projet de 1759 (ville & forts)",
       "thumb": "assets/img/plan5_thumb.jpg",
       "tileUrl": "https://mapwarper.net/maps/tile/102019/{z}/{x}/{y}.png",
+      "fichier": "assets/files/Plan5_1759_1.jpg",
       "defaultVisible": false,
       "defaultOpacity": 0.75,
       "info": {
@@ -71,6 +75,7 @@
       "meta": "Projets de 1788 (Grésigny)",
       "thumb": "assets/img/plan6_thumb.jpg",
       "tileUrl": "https://mapwarper.net/maps/tile/102022/{z}/{x}/{y}.png",
+      "fichier": "assets/files/Plan6_1788_1.jpg",
       "defaultVisible": false,
       "defaultOpacity": 0.75,
       "info": {
