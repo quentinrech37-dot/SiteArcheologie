@@ -9,6 +9,10 @@ const SALINS_ZOOM = 15;
 const PLAN1_TILES_URL = "https://mapwarper.net/maps/tile/101545/{z}/{x}/{y}.png";
 const PLAN2_TILES_URL = "https://mapwarper.net/maps/tile/101560/{z}/{x}/{y}.png";
 const PLAN3_TILES_URL = "https://mapwarper.net/maps/tile/101569/{z}/{x}/{y}.png";
+const PLAN4_TILES_URL = "https://mapwarper.net/maps/tile/102017/{z}/{x}/{y}.png";
+const PLAN5_TILES_URL = "https://mapwarper.net/maps/tile/102019/{z}/{x}/{y}.png";
+const PLAN6_TILES_URL = "https://mapwarper.net/maps/tile/102022/{z}/{x}/{y}.png";
+
 
 
 // Fichiers images (renommez si besoin)
@@ -76,9 +80,30 @@ function initMap(){
     maxNativeZoom: 19,
     attribution: "Plan 3 (Map Warper)"
   });
+  const plan4 = L.tileLayer(PLAN4_TILES_URL, {
+    opacity: 0.75,
+    maxZoom: 22,
+    maxNativeZoom: 19,
+    attribution: "Plan 4 (Map Warper)"
+  });
+
+  const plan5 = L.tileLayer(PLAN5_TILES_URL, {
+    opacity: 0.75,
+    maxZoom: 22,
+    maxNativeZoom: 19,
+    attribution: "Plan 5 (Map Warper)"
+  });
+
+  const plan6 = L.tileLayer(PLAN6_TILES_URL, {
+    opacity: 0.75,
+    maxZoom: 22,
+    maxNativeZoom: 19,
+    attribution: "Plan 6 (Map Warper)"
+  });
 
 
-  overlays = { plan1, plan2, plan3 };
+
+  overlays = { plan1, plan2, plan3, plan4, plan5, plan6 };
 
 }
 
@@ -95,19 +120,30 @@ function initUI(){
   const t1 = document.getElementById("togglePlan1");
   const t2 = document.getElementById("togglePlan2");
   const t3 = document.getElementById("togglePlan3");
+  const t4 = document.getElementById("togglePlan4");
+  const t5 = document.getElementById("togglePlan5");
+  const t6 = document.getElementById("togglePlan6");
 
   const o1 = document.getElementById("opacityPlan1");
   const o2 = document.getElementById("opacityPlan2");
   const o3 = document.getElementById("opacityPlan3");
+  const o4 = document.getElementById("opacityPlan4");
+  const o5 = document.getElementById("opacityPlan5");
+  const o6 = document.getElementById("opacityPlan6");
 
   if (t1) t1.addEventListener("change", () => toggleOverlay("plan1", t1.checked));
   if (t2) t2.addEventListener("change", () => toggleOverlay("plan2", t2.checked));
   if (t3) t3.addEventListener("change", () => toggleOverlay("plan3", t3.checked));
+  if (t4) t4.addEventListener("change", () => toggleOverlay("plan4", t4.checked));
+  if (t5) t5.addEventListener("change", () => toggleOverlay("plan5", t5.checked));
+  if (t6) t6.addEventListener("change", () => toggleOverlay("plan6", t6.checked));
 
   if (o1) o1.addEventListener("input", () => setOverlayOpacity("plan1", parseFloat(o1.value)));
   if (o2) o2.addEventListener("input", () => setOverlayOpacity("plan2", parseFloat(o2.value)));
   if (o3) o3.addEventListener("input", () => setOverlayOpacity("plan3", parseFloat(o3.value)));
-
+  if (o4) o4.addEventListener("input", () => setOverlayOpacity("plan4", parseFloat(o4.value)));
+  if (o5) o5.addEventListener("input", () => setOverlayOpacity("plan5", parseFloat(o5.value)));
+  if (o6) o6.addEventListener("input", () => setOverlayOpacity("plan6", parseFloat(o6.value)));
 
   // Boutons topbar
   const btnReset = document.getElementById("btnReset");
@@ -252,8 +288,28 @@ function openInfo(which){
         <p class="meta"><strong>Source :</strong>BD parcellaire - IGN, Plans anciens (Archives départementales du Jura, BNF, Musée de la Grande Saline, Bibliothèque Municipale de Salins, Archives militaires de Vincennes) - géoréférencé via Map Warper.</p>
         <p><strong>Contenu :</strong> Carte interprétative du tracé des fortifications de Salins-les-Bains. Les segments en bleu correspondent aux vestiges encore conservés en élévation, tandis que les autres tracés indiquent des restitutions ou hypothèses fondées sur les sources historiques, la topographie et les données archéologiques.</p>
       `
-    }
-
+    },
+    plan4: {
+       title: "Plan 4 — Projet de 1738",
+       html: `
+         <p class="meta"><strong>Source :</strong> Plan de Salins relatif au projet de 1738, s. d., signé Aumale, échelle de deux pouces pour cent toises, 1738, ministère de la Défense, Service historique de la Défense (SHD), Vincennes, GR 1 VH 1611.</p>
+         <p>Plan lié au projet de fortification de 1738. Il documente l’organisation urbaine et les aménagements projetés/présentés à cette date.</p>
+       `
+     },
+     plan5: {
+       title: "Plan 5 — Projet de 1759",
+       html: `
+         <p class="meta"><strong>Source :</strong> Plan des ville et forts de Salins pour servir au projet de 1759, légende indiquant les principales pièces de la fortification et les bâtiments qui en dépendent, s. n., s. d., échelle de deux pouces pour cent toises, 1759, ministère de la Défense, SHD, Vincennes, GR 1 VH 1611.</p>
+         <p>Plan de référence pour le projet de 1759, avec légende détaillant les éléments de fortification et leurs dépendances.</p>
+       `
+     },
+     plan6: {
+       title: "Plan 6 — Projets de 1788",
+       html: `
+         <p class="meta"><strong>Source :</strong> Plan de la ville et des forts de Salins pour servir aux projets de 1788, signé Grésigny, s. n., s. d., échelle de deux pouces pour cent toises, ministère de la Défense, SHD, Vincennes, GR 1 VH 1611.</p>
+         <p>Plan tardif (1788) permettant de confronter l’état des fortifications et des forts à la fin du XVIIIe siècle avec les projets et états antérieurs.</p>
+       `
+     }
   };
 
   const d = data[which];
