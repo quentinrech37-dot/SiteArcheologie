@@ -268,19 +268,17 @@ input[type="range"]{ width:100%; }
 
 /* Mobile-first improvements */
 .btn--mobile{
-  display:none;
+  display: none !important;
 }
 
-/* Mobile layout: carte plein écran + panneau repliable */
 @media (max-width: 900px){
-
-  /* Topbar compacte */
-  .topbar{
-    height: auto;          /* IMPORTANT : annule le 74px desktop */
-    position: sticky;      /* reste en haut quand on scroll */
-    top: 0;
-    z-index: 6000;         /* au-dessus de Leaflet */
+  .btn--mobile{
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
   }
+}
+
 
   .brand__title{ font-size:1.1rem; }
   .brand__subtitle{ font-size:.9rem; }
