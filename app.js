@@ -44,10 +44,11 @@ async function init() {
   bindBaseUI();
 
   // Boutons
-  const btnRecenter = document.getElementById("btnRecenter");
-  btnRecenter?.addEventListener("click", () => {
+  const btnReset = document.getElementById("btnReset");
+  btnReset?.addEventListener("click", () => {
     map.setView(SALINS_CENTER, SALINS_ZOOM);
   });
+
 
   // Modal
   bindModal();
