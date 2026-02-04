@@ -267,17 +267,22 @@ input[type="range"]{ width:100%; }
 }
 
 /* Mobile-first improvements */
+/* Bouton Cartes : uniquement mobile */
 .btn--mobile{
-  display: none !important;
+  display:none;
+}
+/* Desktop : sidebar toujours visible */
+.sidebar{
+  position: relative;
+  transform: none !important;
 }
 
 @media (max-width: 900px){
   .btn--mobile{
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
+    display:inline-flex;
   }
 }
+
 
 
   .brand__title{ font-size:1.1rem; }
