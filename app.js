@@ -77,8 +77,8 @@ function bindBaseUI() {
 // -------------------- MODAL --------------------
 function bindModal() {
   const modal = document.getElementById("infoModal");
-  const closeBtn = document.getElementById("modalClose");
-  const overlay = document.getElementById("modalOverlay");
+  const closeBtn = document.getElementById("btnCloseInfo");
+  const overlay = modal?.querySelector(".modal__backdrop");
 
   function close() {
     modal?.setAttribute("aria-hidden", "true");
@@ -91,6 +91,7 @@ function bindModal() {
     if (e.key === "Escape") close();
   });
 }
+
 
 function openInfoFromPlan(planId) {
   const modal = document.getElementById("infoModal");

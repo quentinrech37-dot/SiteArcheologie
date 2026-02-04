@@ -1,4 +1,4 @@
-const CACHE_NAME = "salins-cartes-v18";
+const CACHE_NAME = "salins-cartes-v19";
 
 const CORE_ASSETS = [
   "./",
