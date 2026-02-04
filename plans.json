@@ -32,8 +32,8 @@
       "meta": "Carte interprétative / plan rectifié",
       "thumb": "assets/img/plan3_thumb.jpg",
       "tileUrl": "https://mapwarper.net/maps/tile/101569/{z}/{x}/{y}.png",
-      "defaultVisible": true,
-      "defaultOpacity": 0.70,
+      "defaultVisible": false,
+      "defaultOpacity": 0.55,
       "info": {
         "title": "Plan 3 — Tracé interprétatif de l’enceinte fortifiée",
         "html": "<p class=\"meta\"><strong>Source :</strong> travail personnel (QGIS), compilation de plans anciens et données actuelles - géoréférencement via Map Warper.</p><p><strong>Lecture :</strong> le tracé en bleu correspond aux vestiges encore en élévation ; les autres segments correspondent à des restitutions/hypothèses.</p>"
