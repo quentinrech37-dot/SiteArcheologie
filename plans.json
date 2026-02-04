@@ -32,7 +32,7 @@
       "meta": "Carte interprétative / plan rectifié",
       "thumb": "assets/img/plan3_thumb.jpg",
       "tileUrl": "https://mapwarper.net/maps/tile/101569/{z}/{x}/{y}.png",
-      "defaultVisible": true,
+      "defaultVisible": false,
       "defaultOpacity": 0.70,
       "info": {
         "title": "Plan 3 — Tracé interprétatif de l’enceinte fortifiée",

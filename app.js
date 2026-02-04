@@ -44,10 +44,11 @@ async function init() {
   bindBaseUI();
 
   // Boutons
-  const btnRecenter = document.getElementById("btnRecenter");
-  btnRecenter?.addEventListener("click", () => {
+  const btnReset = document.getElementById("btnReset");
+  btnReset?.addEventListener("click", () => {
     map.setView(SALINS_CENTER, SALINS_ZOOM);
   });
+
 
   // Modal
   bindModal();
@@ -77,8 +78,8 @@ function bindBaseUI() {
 // -------------------- MODAL --------------------
 function bindModal() {
   const modal = document.getElementById("infoModal");
-  const closeBtn = document.getElementById("modalClose");
-  const overlay = document.getElementById("modalOverlay");
+  const closeBtn = document.getElementById("btnCloseInfo");
+  const overlay = modal?.querySelector(".modal__backdrop");
 
   function close() {
     modal?.setAttribute("aria-hidden", "true");
@@ -91,6 +92,7 @@ function bindModal() {
     if (e.key === "Escape") close();
   });
 }
+
 
 function openInfoFromPlan(planId) {
   const modal = document.getElementById("infoModal");
