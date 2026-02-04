@@ -30,23 +30,30 @@
 </head>
 
 <body>
-      <header class="topbar">
-        <div class="topbar__left"></div>
+    <header class="topbar">
+      <div class="topbar__inner">
+        <div class="topbar__left">
+          <button id="btnSidebar" class="btn btn--ghost" type="button" aria-controls="sidebar" aria-expanded="false">
+            Cartes
+          </button>
+        </div>
 
-        <div class="topbar__center">
-          <div class="brand brand--center">
-            <img class="brand__logo" src="assets/img/icon-192.png" alt="Blason de Salins-les-Bains" />
-            <div class="brand__text">
-              <div class="brand__title">Salins-les-Bains</div>
-              <div class="brand__subtitle">Plans & cartographie</div>
-            </div>
+        <div class="brand brand--center">
+          <img class="brand__crest" src="assets/img/icon-192.png" alt="Blason de Salins-les-Bains">
+          <div class="brand__text">
+            <div class="brand__title">Salins-les-Bains</div>
+            <div class="brand__subtitle">Plans &amp; cartographie</div>
           </div>
         </div>
 
         <div class="topbar__right">
-          <button id="btnRecenter" class="btn btn--primary">Recentrer</button>
+          <button id="btnReset" class="btn btn--primary" type="button">
+            Recentrer
+          </button>
         </div>
-      </header>
+      </div>
+    </header>
+
 
   <main class="layout">
     <aside class="sidebar" id="sidebar">

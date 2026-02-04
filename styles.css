@@ -285,7 +285,11 @@ input[type="range"]{ width:100%; }
   .brand__title{ font-size:1.1rem; }
   .brand__subtitle{ font-size:.9rem; }
 
-  .topbar__left{ display:none; } /* cache "Cartographie" (badge) sur mobile */
+  .topbar__left{ display:flex; align-items:center; } /* cache "Cartographie" (badge) sur mobile */
+  #btnSidebar{
+    padding: 10px 12px;
+    border-radius: 999px;
+  }
 
   .topbar__actions{
     justify-content:flex-start;

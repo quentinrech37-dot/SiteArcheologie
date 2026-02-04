@@ -44,10 +44,47 @@ async function init() {
   bindBaseUI();
 
   // Boutons
+  // Boutons
   const btnReset = document.getElementById("btnReset");
   btnReset?.addEventListener("click", () => {
     map.setView(SALINS_CENTER, SALINS_ZOOM);
   });
+
+  // Mobile : bouton "Cartes" (ouvre/ferme le panneau)
+  const sidebar = document.getElementById("sidebar");
+  const btnSidebar = document.getElementById("btnSidebar");
+
+  function setSidebar(open) {
+    if (!sidebar || !btnSidebar) return;
+    sidebar.classList.toggle("sidebar--open", open);
+    btnSidebar.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+
+  btnSidebar?.addEventListener("click", () => {
+    const open = !sidebar?.classList.contains("sidebar--open");
+    setSidebar(open);
+  });
+
+  // Fermer le panneau si on clique ailleurs (pratique en mobile)
+  document.addEventListener("click", (e) => {
+    if (!sidebar || !btnSidebar) return;
+    if (!sidebar.classList.contains("sidebar--open")) return;
+
+    const t = e.target;
+    const clickInsideSidebar = sidebar.contains(t);
+    const clickOnButton = btnSidebar.contains(t);
+    if (!clickInsideSidebar && !clickOnButton) setSidebar(false);
+  });
+
+  // Si on repasse en "desktop", on force le panneau ouvert (comportement normal)
+  window.addEventListener("resize", () => {
+    if (!sidebar) return;
+    if (window.innerWidth > 980) {
+      sidebar.classList.remove("sidebar--open"); // en desktop le layout affiche déjà le panneau
+      btnSidebar?.setAttribute("aria-expanded", "false");
+    }
+  });
+
 
 
   // Modal
