@@ -4,12 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#0b2a3a" />
-  <title>Salins-les-Bains - Cartes</title>
+  <title>Salins-les-Bains — Cartes</title>
 
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="icon" type="image/png" sizes="32x35" href="assets/img/favicon.png" />
-  <link rel="apple-touch-icon" href="assets/img/icon-192.png" />
-
+  <link rel="icon" href="assets/icons/icon-192.png" />
 
   <!-- Leaflet -->
   <link
@@ -30,29 +28,22 @@
 </head>
 
 <body>
-    <header class="topbar">
-      <div class="topbar__inner">
-        <div class="topbar__left">
-          <button id="btnSidebar" class="btn btn--ghost" type="button" aria-controls="sidebar" aria-expanded="false">
-            Cartes
-          </button>
-        </div>
+  <header class="topbar">
+    <div class="topbar__left">
+      <div class="sitebadge">Cartographie</div>
+    </div>
 
-        <div class="brand brand--center">
-          <img class="brand__crest" src="assets/img/icon-192.png" alt="Blason de Salins-les-Bains">
-          <div class="brand__text">
-            <div class="brand__title">Salins-les-Bains</div>
-            <div class="brand__subtitle">Plans &amp; cartographie</div>
-          </div>
-        </div>
+    <div class="brand brand--center">
+      <div class="brand__title">Salins-les-Bains</div>
+      <div class="brand__subtitle">Plans & cartographie</div>
+    </div>
 
-        <div class="topbar__right">
-          <button id="btnReset" class="btn btn--primary" type="button">
-            Recentrer
-          </button>
-        </div>
-      </div>
-    </header>
+    <div class="topbar__actions">
+      <button id="btnSidebar" class="btn btn--primary btn--mobile" type="button" title="Ouvrir les cartes">Cartes</button>
+      <button id="btnReset" class="btn" title="Recentrer sur Salins">Recentrer</button>
+    </div>
+  </header>
+
 
 
   <main class="layout">
@@ -72,9 +63,144 @@
       </div>
 
       <div class="panel">
-      <h3 class="sectiontitle">Plans historiques (surcouches)</h3>
+        <div class="panel__title">Plans historiques (surcouches)</div>
 
-      <div id="plansContainer"></div>
+        <!-- Plan 1 -->
+        <div class="layeritem">
+          <label class="layeritem__main">
+            <input type="checkbox" id="togglePlan1" />
+            <img class="layeritem__thumb" src="assets/img/plan1_thumb.jpg" alt="Vignette plan 1">
+            <span class="layeritem__text">
+              <span class="layeritem__name">Plan 1</span>
+              <span class="layeritem__meta">Fortifications de Salins - Plan de masse de la ville et des forts Saint-André, Belin et Bracon (fin XVIIIᵉ siècle)</span>
+            </span>
+          </label>
+
+          <div class="layeritem__actions">
+            <button class="btn btn--ghost" type="button" data-info="plan1">Infos</button>
+          </div>
+        </div>
+
+        <div class="opacity">
+          <label for="opacityPlan1">Opacité</label>
+          <input type="range" id="opacityPlan1" min="0" max="1" step="0.05" value="0.75" />
+        </div>
+
+        <hr class="divider" />
+
+        <!-- Plan 2 -->
+        <div class="layeritem">
+          <label class="layeritem__main">
+            <input type="checkbox" id="togglePlan2" />
+            <img class="layeritem__thumb" src="assets/img/plan2_thumb.jpg" alt="Vignette plan 2">
+            <span class="layeritem__text">
+              <span class="layeritem__name">Plan 2</span>
+              <span class="layeritem__meta">Extrait du Recueil des plans des places du Royaume divisées en provinces (1693)</span>
+            </span>
+          </label>
+
+          <div class="layeritem__actions">
+            <button class="btn btn--ghost" type="button" data-info="plan2">Infos</button>
+          </div>
+        </div>
+
+        <div class="opacity">
+          <label for="opacityPlan2">Opacité</label>
+          <input type="range" id="opacityPlan2" min="0" max="1" step="0.05" value="0.75" />
+        </div>
+
+        <hr class="divider" />
+
+        <!-- Plan 3 -->
+        <div class="layeritem">
+          <label class="layeritem__main">
+            <input type="checkbox" id="togglePlan3" />
+            <img class="layeritem__thumb" src="assets/img/plan3_thumb.jpg" alt="Vignette plan 3">
+            <span class="layeritem__text">
+              <span class="layeritem__name">Plan 3</span>
+              <span class="layeritem__meta">Tracé interprétatif des fortifications de Salins-les-Bains (état des connaissances)</span>
+            </span>
+          </label>
+
+          <div class="layeritem__actions">
+            <button class="btn btn--ghost" type="button" data-info="plan3">Infos</button>
+          </div>
+        </div>
+
+        <div class="opacity">
+          <label for="opacityPlan3">Opacité</label>
+          <input type="range" id="opacityPlan3" min="0" max="1" step="0.05" value="0.75" />
+        </div>
+        <hr class="divider" />
+
+        <!-- Plan 4 -->
+        <div class="layeritem">
+          <label class="layeritem__main">
+            <input type="checkbox" id="togglePlan4" />
+            <img class="layeritem__thumb" src="assets/img/plan4_thumb.jpg" alt="Vignette plan 4">
+            <span class="layeritem__text">
+              <span class="layeritem__name">Plan 4</span>
+              <span class="layeritem__meta">Projet de 1738 (signé Aumale) — SHD Vincennes, GR 1 VH 1611</span>
+            </span>
+          </label>
+
+          <div class="layeritem__actions">
+            <button class="btn btn--ghost" type="button" data-info="plan4">Infos</button>
+          </div>
+        </div>
+
+        <div class="opacity">
+          <label for="opacityPlan4">Opacité</label>
+          <input type="range" id="opacityPlan4" min="0" max="1" step="0.05" value="0.75" />
+        </div>
+
+        <hr class="divider" />
+
+        <!-- Plan 5 -->
+        <div class="layeritem">
+          <label class="layeritem__main">
+            <input type="checkbox" id="togglePlan5" />
+            <img class="layeritem__thumb" src="assets/img/plan5_thumb.jpg" alt="Vignette plan 5">
+            <span class="layeritem__text">
+              <span class="layeritem__name">Plan 5</span>
+              <span class="layeritem__meta">Projet de 1759 — ville & forts (avec légende) — SHD Vincennes, GR 1 VH 1611</span>
+            </span>
+          </label>
+
+          <div class="layeritem__actions">
+            <button class="btn btn--ghost" type="button" data-info="plan5">Infos</button>
+          </div>
+        </div>
+
+        <div class="opacity">
+          <label for="opacityPlan5">Opacité</label>
+          <input type="range" id="opacityPlan5" min="0" max="1" step="0.05" value="0.75" />
+        </div>
+
+        <hr class="divider" />
+
+        <!-- Plan 6 -->
+        <div class="layeritem">
+          <label class="layeritem__main">
+            <input type="checkbox" id="togglePlan6" />
+            <img class="layeritem__thumb" src="assets/img/plan6_thumb.jpg" alt="Vignette plan 6">
+            <span class="layeritem__text">
+              <span class="layeritem__name">Plan 6</span>
+              <span class="layeritem__meta">Projets de 1788 (signé Grésigny) — SHD Vincennes, GR 1 VH 1611</span>
+            </span>
+          </label>
+
+          <div class="layeritem__actions">
+            <button class="btn btn--ghost" type="button" data-info="plan6">Infos</button>
+          </div>
+        </div>
+
+        <div class="opacity">
+          <label for="opacityPlan6">Opacité</label>
+          <input type="range" id="opacityPlan6" min="0" max="1" step="0.05" value="0.75" />
+        </div>
+
+        <hr class="divider" />
 
       </div>
 
@@ -101,7 +227,7 @@
           <div class="modal__kicker">Plan</div>
           <div class="modal__title" id="modalTitle">Informations</div>
         </div>
-        <button class="btn btn--ghost" type="button" id="btnCloseInfo">Fermer</button>
+        <button class="btn btn--ghost" type="button" data-close="1">Fermer</button>
       </div>
       <div class="modal__body" id="modalBody"></div>
     </div>

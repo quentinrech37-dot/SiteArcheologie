@@ -20,22 +20,16 @@ html,body{ height:100%; margin:0; font-family: ui-serif, Georgia, "Times New Rom
 
 /* Topbar */
 .topbar{
+  height:74px;
   display:grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 180px 1fr 260px;
   align-items:center;
   gap:12px;
-
-  background: linear-gradient(180deg, var(--brand), var(--brand2));
-  color: #fff;
-  padding: 16px 24px;
-  min-height: 86px;
-
-  box-shadow: 0 6px 18px rgba(2, 8, 23, .25);
-  position: relative;
-  z-index: 7000;
+  padding:0 16px;
+  background: linear-gradient(90deg, var(--brand), var(--brand2));
+  border-bottom:1px solid rgba(255,255,255,.15);
+  color:#fff;
 }
-
-
 
 .topbar__left{ display:flex; align-items:center; }
 .sitebadge{
@@ -88,7 +82,7 @@ html,body{ height:100%; margin:0; font-family: ui-serif, Georgia, "Times New Rom
 
 /* Layout */
 .layout{
-  height: calc(100% - 86px);
+  height: calc(100% - 74px);
   display:grid;
   grid-template-columns: 360px 1fr;
 }
@@ -267,40 +261,30 @@ input[type="range"]{ width:100%; }
 }
 
 /* Mobile-first improvements */
-/* Bouton Cartes : uniquement mobile */
 .btn--mobile{
   display:none;
 }
-/* Desktop : sidebar toujours visible */
-.sidebar{
-  position: relative;
-  transform: none !important;
-}
 
+/* Mobile layout: carte plein écran + panneau repliable */
 @media (max-width: 900px){
-  .btn--mobile{
-    display:inline-flex;
+
+  /* Topbar compacte */
+  .topbar{
+    height: auto;          /* IMPORTANT : annule le 74px desktop */
+    position: sticky;      /* reste en haut quand on scroll */
+    top: 0;
+    z-index: 6000;         /* au-dessus de Leaflet */
   }
-}
-
-
 
   .brand__title{ font-size:1.1rem; }
   .brand__subtitle{ font-size:.9rem; }
 
-  .topbar__left{ display:flex; align-items:center; } /* cache "Cartographie" (badge) sur mobile */
-  #btnSidebar{
-    padding: 10px 12px;
-    border-radius: 999px;
-  }
+  .topbar__left{ display:none; } /* cache "Cartographie" (badge) sur mobile */
 
   .topbar__actions{
     justify-content:flex-start;
     flex-wrap:wrap;
     gap:8px;
-  }
-  .brand__logo{
-    width:28px;
   }
 
   .btn{
@@ -352,29 +336,4 @@ input[type="range"]{ width:100%; }
   #map{
     height: 100%;
   }
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.brand--center{
-  justify-content:center;
-  text-align:left; /* texte à gauche du blason */
-}
-
-.brand__logo{
-  width:38px;
-  height:auto;
-  display:block;
-  filter: drop-shadow(0 6px 10px rgba(0,0,0,.25));
-}
-
-.brand__text{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  line-height:1.05;
 }
