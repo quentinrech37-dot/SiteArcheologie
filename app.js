@@ -42,7 +42,8 @@ async function init() {
 
   // UI fond
   bindBaseUI();
-
+  // Sidebar mobile
+  bindSidebarMobile();
   // Boutons
   const btnReset = document.getElementById("btnReset");
   btnReset?.addEventListener("click", () => {
@@ -93,6 +94,31 @@ function bindModal() {
   });
 }
 
+// -------------------- SIDEBAR MOBILE --------------------
+function bindSidebarMobile() {
+  const btn = document.getElementById("btnSidebar");
+  const sidebar = document.getElementById("sidebar");
+  if (!btn || !sidebar) return;
+
+  // Ouvre/ferme le drawer
+  btn.addEventListener("click", () => {
+    sidebar.classList.toggle("sidebar--open");
+  });
+
+  // Ferme quand on clique en dehors (UX mobile)
+  document.addEventListener("click", (e) => {
+    // si le clic vient du bouton ou de la sidebar, on ne ferme pas
+    if (sidebar.contains(e.target) || btn.contains(e.target)) return;
+    sidebar.classList.remove("sidebar--open");
+  });
+
+  // Ferme si on repasse en desktop (évite sidebar bloquée ouverte)
+  window.addEventListener("resize", () => {
+    if (window.matchMedia("(min-width: 901px)").matches) {
+      sidebar.classList.remove("sidebar--open");
+    }
+  });
+}
 
 function openInfoFromPlan(planId) {
   const modal = document.getElementById("infoModal");
