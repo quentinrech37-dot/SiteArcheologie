@@ -1,4 +1,4 @@
-const CACHE_NAME = "salins-cartes-v16";
+const CACHE_NAME = "salins-cartes-v17";
 const CORE_ASSETS = [
   "./",
   "./index.html",
@@ -13,8 +13,8 @@ const CORE_ASSETS = [
   "./assets/img/plan4_thumb.jpg",
   "./assets/img/plan5_thumb.jpg",
   "./assets/img/plan6_thumb.jpg",
-  "./assets/icons/icon-192.png",
-  "./assets/icons/icon-512.png"
+  "./assets/img/icon-192.png",
+  "./assets/img/icon-512.png"
 ];
 // Install : cache du coeur du site
 self.addEventListener("install", (event) => {
