@@ -113,7 +113,7 @@ function openInfoFromPlan(planId) {
       <p>
         <a
           href="${st.data.fichier}"
-          class="btn btn--primary"
+          class="btn btn--ghost"
           target="_blank"
           download
         >
