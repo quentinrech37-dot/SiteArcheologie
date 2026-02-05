@@ -1,4 +1,4 @@
-const CACHE_NAME = "salins-cartes-v22"; //incrémenter de 1 le -v dès qu'une mise à jour s'effectue, même la plus petite.
+const CACHE_NAME = "salins-cartes-v23"; //incrémenter de 1 le -v dès qu'une mise à jour s'effectue, même la plus petite.
 const CORE_ASSETS = [
   "./",
   "./index.html",
